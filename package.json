@@ -1,0 +1,20 @@
+{
+  "name": "voicestack-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate.mjs",
+    "demo": "node scripts/demo.mjs",
+    "start": "node src/server.mjs",
+    "agent": "node scripts/agent.mjs",
+    "probe": "node scripts/probe.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0"
+  }
+}
