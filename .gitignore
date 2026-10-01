@@ -5,3 +5,4 @@ runs/
 CLAUDE.md
 .codex/
 web/.astro/
+**/.astro/
