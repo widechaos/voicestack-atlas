@@ -2,7 +2,7 @@
 
 A version-aware faster-whisper deployment planner for the Sanity Challenge. The Context experiment targets Path One; a direct Content Lake Astro frontend is the Path Two fallback. I built it to prevent one deceptively common mistake: combining a current installation guide with a historical GPU requirement and getting a plausible but unusable runtime.
 
-**Status:** the Astro frontend reads twelve live documents from the public Sanity Content Lake. Unauthenticated reads, data fidelity, and current, unknown, and CPU profiles passed live checks. This is the Path Two build. The separate Context experiment remains incomplete: ingestion succeeded, but its Knowledge Base exposed no entries and its MCP endpoint did not persist. Neither path is submitted, and no successful live Agent retrieval is claimed.
+**Status:** the Astro frontend reads twelve live documents from the public Sanity Content Lake. Unauthenticated reads, data fidelity, and current, unknown, and CPU profiles passed live checks. This is the Path Two build. The separate Context experiment remains incomplete: ingestion succeeded, but its Knowledge Base exposed no entries and its MCP endpoint did not persist. The [Path Two submission is published on DEV](https://dev.to/widechaos/voicestack-atlas-version-aware-speech-deployment-with-astro-and-sanity-2la2). No successful live Agent retrieval or awarded badge is claimed.
 
 ## What is structured
 
