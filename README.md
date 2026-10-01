@@ -2,7 +2,7 @@
 
 A version-aware faster-whisper deployment planner for the Sanity Challenge. The Context experiment targets Path One; a direct Content Lake Astro frontend is the Path Two fallback. I built it to prevent one deceptively common mistake: combining a current installation guide with a historical GPU requirement and getting a plausible but unusable runtime.
 
-**Status:** the offline planner and local Astro build pass their checks. Sanity website ingestion succeeded, but the completed Knowledge Base currently exposes no entries and MCP endpoint creation did not persist. The Astro fallback is ready locally; public dataset seeding awaits permission to create a project-scoped Editor token. Neither path is submitted. No live Agent retrieval or working live-data deployment is claimed.
+**Status:** the Astro frontend reads twelve live documents from the public Sanity Content Lake. Unauthenticated reads, data fidelity, and current, unknown, and CPU profiles passed live checks. This is the Path Two build. The separate Context experiment remains incomplete: ingestion succeeded, but its Knowledge Base exposed no entries and its MCP endpoint did not persist. Neither path is submitted, and no successful live Agent retrieval is claimed.
 
 ## What is structured
 
@@ -34,11 +34,11 @@ npm run agent -- 'I have CUDA 12, cuDNN 8 and 8kHz PCM audio as a NumPy array. W
 
 The runner ignores unrelated user MCP configuration, runs with a read-only sandbox, and uses an ephemeral session. Local evidence goes to ignored `runs/`. Review evidence before making it public. The source URL guard enforces citation membership, not semantic entailment; human review remains necessary.
 
-## Astro fallback
+## Astro live frontend
 
-`npm run build` builds `web/` to `docs/`. This client reads the public Sanity Content Lake directly, without a browser token. A failed or empty read displays an error instead of substituting fixture rules. The fallback cannot return deployment decisions until the dataset is seeded. `scripts/seed.mjs` creates only the original source and rule documents in the personal project; it requires an authorized local Editor token. `scripts/verify-live.mjs` checks unauthenticated public reads and data fidelity, but has **not run successfully yet**.
+`npm run build` builds `web/` to `docs/`. This client reads the public Sanity Content Lake directly, without a browser token. A failed or empty read displays an error instead of substituting fixture rules. `scripts/seed.mjs` creates only the original source and rule documents in the personal project; it requires an authorized local Editor token. `scripts/verify-live.mjs` checks unauthenticated public reads and data fidelity, and passed against the live dataset.
 
-The currently published Pages demo is still the offline prototype. This branch does not replace it before live data is verified.
+The Pages deployment is generated from this Astro build. The earlier offline preview remains available locally through `npm start`.
 
 ## Sanity project
 
