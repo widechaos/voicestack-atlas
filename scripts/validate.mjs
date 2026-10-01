@@ -6,6 +6,7 @@ for (const r of rules) {
   if(ids.has(r._id)) throw new Error('Duplicate rule'); ids.add(r._id);
   const source=sources.find(s=>s.id===r.sourceId);
   if(!source) throw new Error('Missing source');
+  if(r.sourceRef?._type !== 'reference' || r.sourceRef._ref !== r.sourceId) throw new Error('Invalid Sanity source reference');
   if(!(await readFile(`content/${source.id}.md`,'utf8')).includes(r.evidence)) throw new Error(`Evidence missing: ${r._id}`);
 }
 const docs=[...sources.map(s=>({_id:s.id,_type:'source',...s})),...rules];

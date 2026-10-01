@@ -18,4 +18,4 @@ for(const source of sources){
 }
 await writeFile('docs/sources/index.html',`${header}<h1>VoiceStack Atlas curated deployment corpus</h1><p>Current and historical sources are version-scoped. These are original structured annotations, grounded in the linked public upstream files. No GPU benchmark or inference run was performed.</p><ul>${sources.map(s=>`<li><a href="./${s.id}.html">${s.id}: ${s.ref} ${s.path}</a> — <a href="${s.url}">pinned original</a></li>`).join('')}</ul>${rules.map(r=>`<article><h2>${r._id}</h2><p>Status: ${r.status}. Conditions: ${escape(JSON.stringify(r.when))}</p><p>${escape(r.claim)}</p><p>Action: ${escape(r.action)}</p><p>Evidence literal: ${escape(r.evidence)}</p><a href="${sources.find(s=>s.id===r.sourceId).url}">Original source</a></article>`).join('')}</body></html>`);
 await writeFile('docs/.nojekyll','');
-console.log('Built static preview and public corpus.');
+console.log('Built offline prototype and public corpus. Use npm run build for the Astro delivery.');

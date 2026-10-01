@@ -9,12 +9,18 @@
     "demo": "node scripts/demo.mjs",
     "start": "node src/server.mjs",
     "agent": "node scripts/agent.mjs",
-    "probe": "node scripts/probe.mjs"
+    "probe": "node scripts/probe.mjs",
+    "build": "astro build --root web",
+    "dev": "astro dev --root web --host 127.0.0.1 --port 4318",
+    "seed": "node scripts/seed.mjs"
   },
   "engines": {
     "node": ">=22"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.26.0"
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@sanity/client": "^8.9.0",
+    "astro": "^7.3.5",
+    "cookie": "^2.0.1"
   }
 }

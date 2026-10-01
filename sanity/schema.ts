@@ -5,6 +5,7 @@ export const source = defineType({name:'source',type:'document',title:'Pinned so
 ]})
 export const compatibilityRule = defineType({name:'compatibilityRule',type:'document',title:'Compatibility rule',fields:[
   ...['topic','claim','action','sourceId','evidence'].map(name=>defineField({name,type:'string',validation:r=>r.required()})),
+  defineField({name:'sourceRef',type:'reference',to:[{type:'source'}],validation:r=>r.required()}),
   defineField({name:'priority',type:'number'}),
   defineField({name:'status',type:'string',options:{list:['current','historical']},validation:r=>r.required()}),
   defineField({name:'when',type:'object',fields:[

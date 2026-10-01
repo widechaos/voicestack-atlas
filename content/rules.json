@@ -13,7 +13,11 @@
     "action": "Use the current documented GPU stack; confirm supported compute types on the actual GPU.",
     "sourceId": "fw-current",
     "evidence": "cuDNN 9 for CUDA 12",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   },
   {
     "_id": "gpu-cuda11",
@@ -29,7 +33,11 @@
     "action": "Pin ctranslate2==3.24.0 in an isolated environment; verify the full dependency set before deployment.",
     "sourceId": "fw-current",
     "evidence": "3.24.0",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   },
   {
     "_id": "gpu-cudnn8",
@@ -45,7 +53,11 @@
     "action": "Pin ctranslate2==4.4.0 in an isolated environment; verify dependencies before deployment.",
     "sourceId": "fw-current",
     "evidence": "4.4.0",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   },
   {
     "_id": "gpu-historical",
@@ -59,7 +71,11 @@
     "action": "Read this only when reproducing the v1.0.0 release. Do not replace a current rule with this snapshot.",
     "sourceId": "fw-v1",
     "evidence": "cuDNN 8 for CUDA 11",
-    "status": "historical"
+    "status": "historical",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-v1"
+    }
   },
   {
     "_id": "audio-array",
@@ -73,7 +89,11 @@
     "action": "Decode PCM using the correct sample format, normalize to float32, convert channels to mono, and resample to 16000 Hz before array input.",
     "sourceId": "fw-transcribe",
     "evidence": "if not isinstance(audio, np.ndarray):",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-transcribe"
+    }
   },
   {
     "_id": "audio-file",
@@ -87,7 +107,11 @@
     "action": "Use a supported file path for built-in decoding. Do not transfer this claim to raw NumPy arrays.",
     "sourceId": "fw-current",
     "evidence": "FFmpeg does **not** need to be installed",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   },
   {
     "_id": "lazy-segments",
@@ -99,7 +123,11 @@
     "action": "Iterate over segments or call list(segments) before measuring completed transcription.",
     "sourceId": "fw-current",
     "evidence": "segments = list(segments)",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   },
   {
     "_id": "cpu-int8",
@@ -113,6 +141,10 @@
     "action": "Use the documented CPU example as a starting point; measure on your own hardware.",
     "sourceId": "fw-current",
     "evidence": "device=\"cpu\", compute_type=\"int8\"",
-    "status": "current"
+    "status": "current",
+    "sourceRef": {
+      "_type": "reference",
+      "_ref": "fw-current"
+    }
   }
 ]

@@ -1,0 +1,14 @@
+{
+	"pid": 55061,
+	"port": 4318,
+	"url": "http://127.0.0.1:4318",
+	"urls": {
+		"local": [
+			"http://127.0.0.1:4318/"
+		],
+		"network": [],
+		"networkInterfaceNames": []
+	},
+	"background": true,
+	"startedAt": "2026-10-01T16:56:32.759Z"
+}
